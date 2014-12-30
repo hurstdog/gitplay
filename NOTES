@@ -28,3 +28,10 @@ git log -p -2
     -Sfunctionname : show the last commit to touch the string functionname
     -- $path - only show details about files in $path
 
+git commit --append to modify a previous commit. You can also add files to the
+staging area (cached area) and run --append to add new files to the previous
+commit.
+
+git reset HEAD $file - to move a file from staging back to tracked and modified.
+
+To revert all changes to a modified and tracked file, 'git checkout -- <file>'
