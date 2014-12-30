@@ -1,5 +1,6 @@
 #include "stdio.h"
 
+// A simple Hello, World app to practice with Git.
 
 int
 main(int argc, char* argv[]) {
