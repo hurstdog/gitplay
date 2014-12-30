@@ -1,8 +1,0 @@
-This is a directory that I'm using to learn git.
-It's called repo. But perhaps it should be git-howto.
-Actually, it doesn't matter what my directory name is since this is all tracked
-in the .git directory.
-
-The directions I'm following are at:
-    http://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
-
