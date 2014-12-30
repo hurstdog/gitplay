@@ -1,0 +1,30 @@
+So far, the commands I've learned are:
+git config --global user.name $value
+git config --global user.email $value
+git config --global core.editor $value
+
+git init - to create a repository in a given directory
+
+git clone https://path/to/repo
+e.g.  git clone https://github.com/libgit2/libgit2
+
+git add
+git status [-s]
+git commit [-a to include un-staged or un-cached files]
+git rm $file
+git mv $file
+
+git log
+git log -p -2
+    -p : show diffs
+    -2 : only the last two commits
+    --stat : show stats about each change
+    --pretty=[oneline|short|full|fuller] : Output format changes
+    --pretty=format:....
+	e.g. git log --pretty=format:"%h - %an, %ar : %s"
+    --since=2.weeks : or with relative dates, or specific times.
+    --author
+    --grep : works on commit messages
+    -Sfunctionname : show the last commit to touch the string functionname
+    -- $path - only show details about files in $path
+
