@@ -35,3 +35,15 @@ commit.
 git reset HEAD $file - to move a file from staging back to tracked and modified.
 
 To revert all changes to a modified and tracked file, 'git checkout -- <file>'
+
+Remote repositories:
+    git remote - list your remote repositories
+    git remote add $shortname $url - Add remote $url to your current dir
+    git remote rename $shortname $anothername - Rename
+    git fetch $shortname - Pull down changes from $shortname to current dir.
+    git fetch origin - Fetch latest from origin, if you've cloned a repo this
+	pulls the latest changes down. THIS DOES NOT MERGE
+    git pull - Fetch latest from origin and merge.
+    git push [remote-name] [branch-name] - Push changes from your branch up to
+	[remote-name]
+    git remote show [remote-name] - Details on the remote repo
