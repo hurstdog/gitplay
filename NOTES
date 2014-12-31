@@ -78,3 +78,7 @@ reset command:
   'Also prepend the command with ! to run an external command. e.g.
     git config --global alias.visual '!gitk'
 
+More additions to the end of NOTES. This is done on the master branch, and the
+branching notes are on the branch 'testing'. Now we'll see what merging looks
+like.
+
