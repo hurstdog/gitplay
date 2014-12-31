@@ -46,4 +46,33 @@ Remote repositories:
     git pull - Fetch latest from origin and merge.
     git push [remote-name] [branch-name] - Push changes from your branch up to
 	[remote-name]
+      e.g. git push origin master
     git remote show [remote-name] - Details on the remote repo
+
+Tagging
+  git tag - list the tags
+  git tag -l $glob - list tags matching the glob
+  git tag [tag] - Tag the current branch with a lightweight tag.
+  git tag -a [tag] [-m 'commit message'] - Annoated tag at the current release.
+  git tag -a [tag] [-m 'commit message'] [hash] - Annotated tag at commit
+    [hash]
+
+  Tags aren't pushed to remote servers by default. Push them with:
+  git push [remotename] [tag] - e.g. git push origin v0.1
+  git push [remotename] --tags - to push all local tags to the server.
+
+  To checkout a specific tag, you create a new branch at the given tag
+    git checkout -b version2 v2.0.0
+
+Aliases
+  To not have to type in the whole command every time, you can set up basic
+aliases. For example:
+  git config --global alias.co checkout
+    Then you only need to type 'git co' instead of 'git checkout'
+  Also use this to fix oddities in the CLI. For instance, to fix the risky
+reset command:
+  git config --global alias.unstage 'reset HEAD --'
+    Then
+  git reset HEAD fileA == git unstage fileA
+  git config --global alias.last 'log -1 HEAD'
+
