@@ -75,4 +75,6 @@ reset command:
     Then
   git reset HEAD fileA == git unstage fileA
   git config --global alias.last 'log -1 HEAD'
+  'Also prepend the command with ! to run an external command. e.g.
+    git config --global alias.visual '!gitk'
 
