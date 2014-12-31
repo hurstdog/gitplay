@@ -83,3 +83,6 @@ branching notes are on the branch 'testing'. Now we'll see what merging looks
 like.
 
 For seeing this easily, use 'git log --oneline --decorate --graph --all'
+
+Branching practice, on the Basic Branching and Merging chapter.
+  I've stopped just before switching to branch master for the hotfix
