@@ -1,3 +1,7 @@
+
+Working through the book. These are my notes.
+The book: http://git-scm.com/book/en/v2/
+
 So far, the commands I've learned are:
 git config --global user.name $value
 git config --global user.email $value
@@ -18,6 +22,7 @@ git log
 git log -p -2
     -p : show diffs
     -2 : only the last two commits
+    --oneline : like --pretty=oneline, but uses short versions of the hashes
     --stat : show stats about each change
     --pretty=[oneline|short|full|fuller] : Output format changes
     --pretty=format:....
@@ -27,6 +32,7 @@ git log -p -2
     --grep : works on commit messages
     -Sfunctionname : show the last commit to touch the string functionname
     -- $path - only show details about files in $path
+  --decorate - Include branch information in the commits
 
 git commit --append to modify a previous commit. You can also add files to the
 staging area (cached area) and run --append to add new files to the previous
@@ -77,4 +83,9 @@ reset command:
   git config --global alias.last 'log -1 HEAD'
   'Also prepend the command with ! to run an external command. e.g.
     git config --global alias.visual '!gitk'
+
+Branches
+  git branch testing - Create branch 'testing'. DOES NOT SWITCH TO IT
+  git checkout testing - Switch to branch 'testing'
+    Note that this moves HEAD to point to the testing branch.
 
