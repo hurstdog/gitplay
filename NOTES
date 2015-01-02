@@ -1,3 +1,7 @@
+
+Working through the book. These are my notes.
+The book: http://git-scm.com/book/en/v2/
+
 So far, the commands I've learned are:
 git config --global user.name $value
 git config --global user.email $value
@@ -18,6 +22,7 @@ git log
 git log -p -2
     -p : show diffs
     -2 : only the last two commits
+    --oneline : like --pretty=oneline, but uses short versions of the hashes
     --stat : show stats about each change
     --pretty=[oneline|short|full|fuller] : Output format changes
     --pretty=format:....
@@ -27,6 +32,7 @@ git log -p -2
     --grep : works on commit messages
     -Sfunctionname : show the last commit to touch the string functionname
     -- $path - only show details about files in $path
+  --decorate - Include branch information in the commits
 
 git commit --amend to modify a previous commit. You can also add files to the
 staging area (cached area) and run --amend to add new files to the previous
@@ -78,11 +84,19 @@ reset command:
   'Also prepend the command with ! to run an external command. e.g.
     git config --global alias.visual '!gitk'
 
-More additions to the end of NOTES. This is done on the master branch, and the
-branching notes are on the branch 'testing'. Now we'll see what merging looks
-like.
+Branches
+  git branch testing - Create branch 'testing'. DOES NOT SWITCH TO IT
+  git checkout testing - Switch to branch 'testing'
+    Note that this moves HEAD to point to the testing branch.
+  git branch -d - delete branch
+  git checkout -b foo - create branch foo and switch there.
+  git brnach -v - To see branches and their commit hash
 
-For seeing this easily, use 'git log --oneline --decorate --graph --all'
+  To merge back into branch 'master', do:
+    git checkout master
+    git merge otherbranch
+  resolve conflicts through editing files, or using 'git mergetool'
+  Always look at 'git status' to see the current state.
 
-Branching practice, on the Basic Branching and Merging chapter.
-  I've stopped just before switching to branch master for the hotfix
+For seeing a good list of commits, use:
+  git log --oneline --decorate --graph --all
