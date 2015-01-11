@@ -1,7 +1,9 @@
 
-Working through the book. These are my notes.
-The book: http://git-scm.com/book/en/v2/
+# Notes on using git
 
+I'm working through the [git book](http://git-scm.com/book/en/v2/). These are my notes.
+
+## The rest
 So far, the commands I've learned are:
 git config --global user.name $value
 git config --global user.email $value
