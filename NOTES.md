@@ -98,7 +98,9 @@ Also prepend the command with ! to run an external command. e.g.
 `git checkout testing` - Switch to branch 'testing' Note that this moves HEAD to point to the testing branch.
 `git branch -d $branch` - delete branch
 `git checkout -b foo` - create branch foo and switch there.
-`git brnach -v` - To see branches and their commit hash
+`git branch -v` - To see branches and their commit hash. Only shows data since the last fetch. To have the latest status, run `git fetch --all` first (`--all` to get from all tracking branches.)
+`git checkout -b somebranch origin/somebranch` - Set up a local branch tracking the branch on origin.
+`git checkout --track origin/somebranch` - Shortcut for the above.
 
 To merge back into branch 'master', do:
 ```
