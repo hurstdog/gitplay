@@ -21,34 +21,35 @@ These are basics on using various commands, added as I come across them.
 * `git add`
 * `git status [-s]`
 * `git commit [-a to include un-staged or un-cached files]`
-* `git commit --amend ` to modify a previous commit. You can also add files to * the staging area (cached area) and run `--amend` to add new files to the previous commit.
+* `git commit --amend ` to modify a previous commit. You can also add files to the staging area (cached area) and run `--amend` to add new files to the previous commit.
 
 * `git rm $file`
 * `git mv $file`
+* `git reset HEAD $file` - to move a file from staging back to tracked and modified.
+* `git checkout -- <file>` - To revert all changes to a modified and tracked file.
 
 More detailed command notes
 ---------------------------
 
-### `git log`
+### Log
 
-`git log -p -2`
-    -p : show diffs
-    -2 : only the last two commits
-    --oneline : like --pretty=oneline, but uses short versions of the hashes
-    --stat : show stats about each change
-    --pretty=[oneline|short|full|fuller] : Output format changes
-    --pretty=format:....  e.g. git log --pretty=format:"%h - %an, %ar : %s"
-    --since=2.weeks : or with relative dates, or specific times.
-    --author
-    --grep : works on commit messages
-    -Sfunctionname : show the last commit to touch the string functionname
-    -- $path - only show details about files in $path
-    --decorate - Include branch information in the commits
+Basic usage: `git log -p -2`
 
+Options
+* `-p` : show diffs
+* `-2` : only the last two commits
+* `--oneline` : like --pretty=oneline, but uses short versions of the hashes
+* `--stat` : show stats about each change
+* `--pretty=[oneline|short|full|fuller]` : Output format changes
+* `--pretty=format:....` :  e.g. `git log --pretty=format:"%h - %an, %ar : %s"`
+* `--since=2.weeks` : or with relative dates, or specific times.
+* `--author`
+* `--grep` : works on commit messages
+* `-Sfunctionname` : show the last commit to touch the string functionname
+* `-- $path` - only show details about files in `$path`
+* `--decorate` - Include branch information in the commits
 
-`git reset HEAD $file` - to move a file from staging back to tracked and modified.
-
-To revert all changes to a modified and tracked file, `git checkout -- <file>`
+* `git log --oneline --decorate --graph --all`:  For seeing a good list of commits, use
 
 ### Remote repositories:
 
@@ -64,11 +65,11 @@ To revert all changes to a modified and tracked file, `git checkout -- <file>`
 
 ### Tagging
 
-`git tag` - list the tags
-`git tag -l $glob` - list tags matching the glob
-`git tag [tag]` - Tag the current branch with a lightweight tag.
-`git tag -a [tag] [-m 'commit message']` - Annoated tag at the current release.
-`git tag -a [tag] [-m 'commit message'] [hash]` - Annotated tag at commit [hash]
+* `git tag` - list the tags
+* `git tag -l $glob` - list tags matching the glob
+* `git tag [tag]` - Tag the current branch with a lightweight tag.
+* `git tag -a [tag] [-m 'commit message']` - Annoated tag at the current release.
+* `git tag -a [tag] [-m 'commit message'] [hash]` - Annotated tag at commit [hash]
 
 Tags aren't pushed to remote servers by default. Push them with:
 * `git push [remotename] [tag]` - e.g. git push origin v0.1
@@ -106,6 +107,3 @@ git merge otherbranch
 ```
   resolve conflicts through editing files, or using `git mergetool`
   Always look at `git status` to see the current state.
-
-For seeing a good list of commits, use:
-`git log --oneline --decorate --graph --all`
