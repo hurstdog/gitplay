@@ -1,8 +1,8 @@
 package main
 
 import (
-  "fmt"
-  "github.com/hurstdog/stringutil"
+	"fmt"
+	"github.com/hurstdog/stringutil"
 )
 
 func main() {
