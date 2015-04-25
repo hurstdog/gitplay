@@ -23,7 +23,7 @@ def findMyWords():
   print 'Hi Blake, Reade, and Piper!'
   words = getWords()
   findByName(words, 'Reade')
-  findByName(words, 'Blake')
+  findByName(words, 'Blake’)
   findByName(words, 'Piper')
 
 if __name__ == '__main__':
